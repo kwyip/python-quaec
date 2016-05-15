@@ -38,17 +38,17 @@ if __name__ == "__main__":
 
     stab = q.StabilizerCode.unencoded_state(nq_logical=1, nq_ancilla=6)
 
-    print "Initial stabilizer code:"
-    print stab
+    print ("Initial stabilizer code:")
+    print (stab)
 
-    print "Encoding:"
-    print enc(stab)
+    print ("Encoding:")
+    print (enc(stab))
 
 
     print "Using syndrome measurement operators:"
     for idx, meas in enumerate(synd_meas):
-        print '\t{}\t{}'.format(idx, meas.str_sparse(incl_ph=False))
-    print ''
+        print ('\t{}\t{}'.format(idx, meas.str_sparse(incl_ph=False)))
+    print ('')
         
     recovery = defaultdict(lambda: q.I.as_clifford())
         
@@ -70,6 +70,6 @@ if __name__ == "__main__":
         
     for recovery_operator in ['I', 'X', 'Y', 'Z']:
         syndromes = inv_recovery[recovery_operator]
-        print "{}: {}".format(recovery_operator, ", ".join([
+        print ("{}: {}".format(recovery_operator, ", ".join([
             "".join(map(str, syndrome)) for syndrome in syndromes
-        ]))
+        ])))
