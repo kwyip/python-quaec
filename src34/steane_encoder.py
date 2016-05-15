@@ -1,3 +1,4 @@
+'''Python 3.4 version'''
 import qecc as q
 import operator as op
 from itertools import starmap, product, compress
